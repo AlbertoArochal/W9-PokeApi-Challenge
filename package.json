@@ -1,5 +1,5 @@
 {
-    "name": "ts-week8",
+    "name": "Challenge-week9",
     "version": "1.0.0",
     "description": "Componentes en TS",
     "main": "index.js",
@@ -7,12 +7,12 @@
     "scripts": {
         "start": "tsc --watch",
         "build": "tsc",
-        "test": "jest --watchAll --coverage",
-        "test:prod": "jest --watchAll --coverage --watchAll=false",
+        "test": "jest --watchAll --coverage --passWithNoTests",
+        "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
         "lint": "eslint ."
     },
     "keywords": [],
-    "author": "Alejandro Cerezo",
+    "author": "Alberto Rocha",
     "license": "ISC",
     "prettier": {
         "singleQuote": true
