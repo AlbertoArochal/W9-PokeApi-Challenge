@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -57,8 +61,24 @@ a {
     width: 100%;
 }
 
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    width: 33.33%;
+    height: 70px;
+    line-height: 70px;
+    box-sizing: border-box;
+}
+
+.pokemon-img {
+    max-width: 25px;
+}
+
 .pokedex {
-    margin: auto;
+    margin-top: 100px;
     width: 1600px;
     height: auto;
     border: 5px solid red;
