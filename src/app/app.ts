@@ -22,6 +22,7 @@ export const app = () => {
     downloadPokemes(
         'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
     ).then(() => {
+        document.querySelector('.counter').innerHTML = `${start} / ${stop}`;
         const pokeArray = JSON.parse(localStorage.getItem('pokeArray')!);
         let template = '';
         pokeArray.slice(start, stop).forEach((element: pokemon) => {
