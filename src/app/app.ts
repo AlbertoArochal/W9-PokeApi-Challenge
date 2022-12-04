@@ -7,7 +7,11 @@ export const app = () => {
         const pokeArray = JSON.parse(localStorage.getItem('pokeArray')!);
         let template = '';
         pokeArray.forEach((element: pokemon) => {
-            template += `<li> Pokemon Name: ${element.name}`;
+            template += `<li> Pokemon Name: ${
+                element.name
+            } <img src = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokeArray.indexOf(
+                element
+            )}.svg"class = "pokemon-img">  </li>`;
         });
         const domichi = document.querySelector('ul');
         domichi!.innerHTML = template;
