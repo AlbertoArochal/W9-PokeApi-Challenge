@@ -8,11 +8,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
-    font-family: 'Pokemon', sans-serif;
-}
-
 a {
     float: right;
 }
@@ -73,6 +68,7 @@ a {
 
 h1 {
     padding-left: 30px;
+    display: inline;
 }
 
 ul {
@@ -103,4 +99,19 @@ li {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.counter {
+    display: inline;
+    font-size: larger;
+    font-weight: 700;
+    margin-right: 50px;
+}
+
+.header {
+    display: flex;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
 }
