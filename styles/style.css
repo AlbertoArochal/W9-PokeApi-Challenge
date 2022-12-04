@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    /* Aquí se agrega un borde */
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Pokemon', sans-serif;
+}
+
+a {
+    float: right;
+}
+
+.favorite-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+    background-color: red;
+    /* Aquí se agrega un borde */
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Aquí se agrega una sombra */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.favorite-button,
+.prev-button,
+.next-button {
+    transition: transform 0.2s;
+    transform: scale(0.9);
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.prev-button,
+.next-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+    background-color: red;
+    /* Aquí se agrega un borde */
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Aquí se agrega una sombra */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 7%;
+    font-size: 20px;
+}
+
+.buttons {
+    position: absolute;
+    top: calc(100% - 50px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pokedex {
+    margin: auto;
+    width: 1600px;
+    height: 500px;
+    border: 5px solid red;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
