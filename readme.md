@@ -1,29 +1,21 @@
-# Componentes en TS: week 8
+# Week 3 - Challenge WeekEnd
 
-## Día 1
+![Logo Pokémon](pokemon-logo.svg)
 
-### Daily. Code Review.
+## Pokémon
 
-## Día 2
+Esta aplicación tendrá tres páginas:
 
-Patrón de arquitectura Componentes: elementos que forman UI
+-   Todos los pokémon - nombre e imagen de cada Pokemon
+-   Mis pokémon
+-   Detalle de pokémon
 
-Responsabilidades:
+El listado de todos los pokémon se alimentará de la PokéAPI, y deberá ir paginado. El listado deberá ir acompañado de dos botones, para avanzar y retroceder de página. También debe mostrar el total de pokèmon mostrados vs. el total de pokèmon que existen (p.e. 10/1000).
 
--   Muestra información que recibe de alguna fuente
--   Responder a las interacciones del usuario
+El usuario debe poder añadir los pokémon que quiera a su listado local. El listado de Mis pokémon se alimentará de [una API local](https://github.com/isdi-coders-2022/bootcamp-202201-bcn/tree/master/week3/challenges/pokeapi). El usuario debería poder eliminar pokémon de su listado local, y también modificar algún/unos dato/s.
 
-Patrón de arquitectura: MVC (Model-View-Controller)
+En cualquiera de los listados, el usuario debería poder ir al detalle de un pokémon, donde se le mostrarán más datos. A esta página de detalle se llega pasando una id por la URL (la id del pokémon que queremos ver).
 
-View (IU / Templete de HTML)
--> Controller (lógica del componente)
--> Model (forma de los datos)
-
-Paradigma de programación
-
--   OOP (Clases, Objetos, Herencia, Interfaces) [datos/comportamientos]
-
--   Estructura (funciones) datos <--> comportamientos (funciones)
--   Funcional (funciones matemáticamente puras)
-
-## Día 3
+BEM
+HTML semántico
+Testing
