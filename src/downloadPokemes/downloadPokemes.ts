@@ -8,7 +8,7 @@ export const downloadPokemes = (url: string) => {
             let start = 0;
             let end = 25;
             const slice = pokeArray.slice(start, end);
-            const saveDataTLS = (slice) => {
+            const saveDataTLS = (slice: object) => {
                 localStorage.setItem('pokeArray', JSON.stringify(slice));
             };
             saveDataTLS(slice);
