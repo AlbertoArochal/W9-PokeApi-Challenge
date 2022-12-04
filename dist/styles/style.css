@@ -20,10 +20,8 @@ a {
     margin: 10px;
     color: white;
     background-color: red;
-    /* Aquí se agrega un borde */
     border: 2px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    /* Aquí se agrega una sombra */
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
@@ -43,10 +41,8 @@ a {
     margin: 10px;
     color: white;
     background-color: red;
-    /* Aquí se agrega un borde */
     border: 2px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    /* Aquí se agrega una sombra */
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 7%;
     font-size: 20px;
