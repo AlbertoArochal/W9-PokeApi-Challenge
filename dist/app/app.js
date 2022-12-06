@@ -15,8 +15,8 @@ buttonN.addEventListener('click', () => {
 });
 export const app = () => {
     downloadPokemes('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0').then(() => {
-        document.querySelector('.counter').innerHTML = `${start} / 1000`;
         const pokeArray = JSON.parse(localStorage.getItem('pokeArray'));
+        document.querySelector('.counter').innerHTML = `${start} / ${pokeArray.length}`;
         let template = '';
         pokeArray.slice(start, stop).forEach((element) => {
             template += `<li> ${element.name} <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeArray.indexOf(element) + 1}.png"class = "pokemon-img">  </li>`;
