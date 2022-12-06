@@ -71,6 +71,30 @@ h1 {
     display: inline;
 }
 
+.semicircle {
+    position: relative;
+    background: red;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.semicircle::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    z-index: 10;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url('/dist/img/pokeball_no_bg.png');
+    background-size: 90px;
+    transform: translateX(-50%) translateY(50%);
+    bottom: 0px;
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
