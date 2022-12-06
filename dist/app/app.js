@@ -1,16 +1,19 @@
 import { downloadPokemes } from '../downloadPokemes/downloadPokemes.js';
 let start = 0;
-let stop = 25;
-const buttonP = document.querySelector('.prev-button');
-const buttonN = document.querySelector('.next-button');
-buttonP.addEventListener('click', () => {
-    start -= 25;
-    stop -= 25;
+let stop = 27;
+const prevButton = document.querySelector('.prev-button');
+prevButton.addEventListener('click', () => {
+    if (start <= 0) {
+        return;
+    }
+    start -= 27;
+    stop -= 27;
     app();
 });
-buttonN.addEventListener('click', () => {
-    start += 25;
-    stop += 25;
+const nextButton = document.querySelector('.next-button');
+nextButton.addEventListener('click', () => {
+    start += 27;
+    stop += 27;
     app();
 });
 export const app = () => {
@@ -19,7 +22,7 @@ export const app = () => {
         document.querySelector('.counter').innerHTML = `${start} / ${pokeArray.length}`;
         let template = '';
         pokeArray.slice(start, stop).forEach((element) => {
-            template += `<li> ${element.name} <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeArray.indexOf(element) + 1}.png"class = "pokemon-img">  </li>`;
+            template += `<li> <a href="./poke_profile.html" class="pokemon__profile"> ${element.name} </a> <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeArray.indexOf(element) + 1}.png"class = "pokemon-img">  </li>`;
         });
         const domichi = document.querySelector('ul');
         domichi.innerHTML = template;
