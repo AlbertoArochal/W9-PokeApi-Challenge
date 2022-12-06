@@ -6,6 +6,7 @@ const selectPoke = () => {
         poke.addEventListener('click', () => {
             const pokeName = poke.textContent;
             const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+            const pokemon = url;
         });
     });
 };
