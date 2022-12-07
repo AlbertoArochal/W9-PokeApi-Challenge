@@ -2,7 +2,8 @@ import { createPokemon } from '../Classes/Pokemon.js';
 
 export const pokeClick = async (event: MouseEvent) => {
     try {
-        const name = event.target.textContent;
+        const eventHTML = event.target as HTMLElement;
+        const name = eventHTML!.textContent;
         const response = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${name}`
         );
