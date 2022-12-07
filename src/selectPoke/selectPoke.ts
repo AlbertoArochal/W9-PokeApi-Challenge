@@ -4,7 +4,7 @@ const selectPoke = () => {
         const pokeSelected = '';
         poke.addEventListener('click', () => {
             const pokeName = poke.textContent;
-            const url: string = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
             const pokemon = url;
         });
     });

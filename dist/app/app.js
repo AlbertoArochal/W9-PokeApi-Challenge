@@ -1,4 +1,6 @@
 import { downloadPokemes } from '../downloadPokemes/downloadPokemes.js';
+import { getPokePic } from '../getPokepic/getPokePic.js';
+import { pokeClick } from '../poke_profile/pokemonProfile.js';
 let start = 0;
 let stop = 27;
 const prevButton = document.querySelector('.prev-button');
@@ -22,10 +24,25 @@ export const app = () => {
         document.querySelector('.counter').innerHTML = `${start} / ${pokeArray.length}`;
         let template = '';
         pokeArray.slice(start, stop).forEach((element) => {
-            template += `<li> <a href="./poke_profile.html" class="pokemon__profile"> ${element.name} </a> <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeArray.indexOf(element) + 1}.png"class = "pokemon-img">  </li>`;
+            let pokePic;
+            getPokePic(element.name)
+                .then(() => {
+                pokePic = localStorage.getItem('pokepic');
+            })
+                .then(() => {
+                template += `<li> <a href="./poke_profile.html" class="pokemon__profile"> ${element.name} </a> <img src = ${pokePic}
+                      }.png"class = "pokemon-img">  </li>`;
+                const domichi = document.querySelector('ul');
+                domichi.innerHTML = template;
+            });
         });
-        const domichi = document.querySelector('ul');
-        domichi.innerHTML = template;
+        // Agrega esta línea después de inyectar los elementos <a> en el DOM
+        const anchorElements = document.querySelectorAll('a');
+        anchorElements.forEach((anchorElement) => {
+            anchorElement.addEventListener('click', (event) => {
+                pokeClick(event);
+            });
+        });
     });
 };
 app();
