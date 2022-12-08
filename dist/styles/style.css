@@ -130,6 +130,14 @@ li {
     backdrop-filter: blur(10px);
 }
 
+.pokemini {
+    right: 30;
+    height: 25%;
+    margin-right: 7px;
+    margin-top: 27px;
+    cursor: pointer;
+}
+
 .counter {
     display: inline;
     font-size: larger;

@@ -30,8 +30,9 @@ export const app = async (start = 0, stop = 27) => {
             pokePic = localStorage.getItem('pokepic');
         })
             .then(() => {
-            template += `<li> <a href="./poke_profile.html" class="pokemon__profile">   ${element.name} </a> <img src = ${pokePic}
-            }.png"class = "pokemon-img">  </li>`;
+            template += `<li> <img src="./pokemini.png" alt="pokeball icon" class="pokemini"> <a href="./poke_profile.html" class="pokemon__profile">   ${element.name} </a> <img src = ${pokePic}
+            }.png"class = "pokemon-img"> 
+            </li>`;
             const domichi = document.querySelector('ul');
             domichi.innerHTML = template;
             const pokemonProfile = document.querySelectorAll('li');
