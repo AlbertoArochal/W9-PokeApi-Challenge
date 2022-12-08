@@ -1,6 +1,6 @@
 # Week 3 - Challenge WeekEnd
 
-![Logo Pokémon](pokemon-logo.svg)
+![alt text](/dist/favicon.png)
 
 ## Pokémon
 
