@@ -90,7 +90,7 @@ h1 {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-image: url('/dist/img/pokeball_no_bg.png');
+    background-image: url('https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png');
     background-size: 90px;
     transform: translateX(-50%) translateY(50%);
     bottom: 0px;
