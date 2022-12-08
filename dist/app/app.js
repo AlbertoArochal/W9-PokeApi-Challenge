@@ -1,24 +1,24 @@
 import { downloadPokemes } from '../downloadPokemes/downloadPokemes.js';
 import { getPokePic } from '../getPokepic/getPokePic.js';
 import { createPokemon } from '../Classes/Pokemon.js';
-let start = 0;
-let stop = 27;
-const prevButton = document.querySelector('.prev-button');
-prevButton.addEventListener('click', () => {
-    if (start <= 0) {
-        return;
-    }
-    start -= 27;
-    stop -= 27;
-    app();
-});
-const nextButton = document.querySelector('.next-button');
-nextButton.addEventListener('click', () => {
-    start += 27;
-    stop += 27;
-    app();
-});
-export const app = async () => {
+export const app = async (start = 0, stop = 27) => {
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const handlePrevButtonClick = () => {
+        if (start <= 0) {
+            return;
+        }
+        start -= 27;
+        stop -= 27;
+        app(start, stop);
+    };
+    const handleNextButtonClick = () => {
+        start += 27;
+        stop += 27;
+        app(start, stop);
+    };
+    prevButton.addEventListener('click', handlePrevButtonClick);
+    nextButton.addEventListener('click', handleNextButtonClick);
     await downloadPokemes('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
     const pokeArray = JSON.parse(localStorage.getItem('pokeArray'));
     document.querySelector('.counter').innerHTML = `${start} / ${pokeArray.length}`;

@@ -1,5 +1,13 @@
-import { createPokemon } from '../Classes/Pokemon.js';
-export const pokeClick = async (event) => {
-    const pokeName = event.target.innerHTML;
-    const pokemon = await createPokemon(pokeName);
-};
+import { Componente } from '../Classes/Component';
+class PokeProfile extends Componente {
+    element;
+    constructor(element) {
+        super(element);
+        this.element = element;
+    }
+    async showProfile() {
+        const pokeObject = await JSON.parse(localStorage.getItem('pokeobject'));
+        console.log(pokeObject);
+    }
+}
+pokeProfile();
