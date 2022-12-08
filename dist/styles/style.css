@@ -145,6 +145,21 @@ li {
     flex-wrap: nowrap;
 }
 
+.pokefile {
+    border: 4px solid red;
+    margin: 10% auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.pokefile img {
+    width: 150%;
+    align-self: flex-start;
+}
+
 @media only screen and (max-width: 767px) {
     .prev-button,
     .next-button {

@@ -1,26 +1,37 @@
-import { createPokemon } from '../Classes/Pokemon.js';
+import { Componente } from '../Classes/Component.js';
 
-export const pokeClick = async (event: MouseEvent) => {
-    try {
-        const eventHTML = event.target as HTMLElement;
-        const name = eventHTML!.textContent;
-        const response = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/${name}`
-        );
-        const pokemon = await response.json();
-        const id = pokemon.id;
-        const instance = await createPokemon(id);
-
-        // Save the new item to the local server instead of local storage
-        const postResponse = await fetch('http://localhost:3000/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ instance }),
-        });
-        return postResponse;
-    } catch (err) {
-        console.log(err);
+class PokeProfile extends Componente {
+    constructor(public element: HTMLElement) {
+        super(element);
     }
-};
+
+    async showProfile() {
+        const pokeObject = await JSON.parse(
+            localStorage.getItem('pokeobject')!
+        );
+
+        const template = `
+        <div class = "pokefile" >
+        <h1>Perfil de ${pokeObject.name}</h1>
+          <ul>
+            <li>Nombre: ${pokeObject.name}</li>
+            <li>ID: ${pokeObject.id}</li>
+            <li>URL: ${pokeObject.url}</li>
+            <li>Altura: ${pokeObject.height}</li>
+            <li>Peso: ${pokeObject.weight}</li>
+            <li>
+              <img src="${pokeObject.sprites}" alt="${pokeObject.name}">
+            </li>
+          </ul>
+        </div>
+      `;
+
+        this.replaceElementWithTemplate(template);
+    }
+}
+
+const pokeProfileElement = document.querySelector(
+    '.Profile__container'
+) as HTMLElement;
+const pokeProfile = new PokeProfile(pokeProfileElement);
+pokeProfile.showProfile();
