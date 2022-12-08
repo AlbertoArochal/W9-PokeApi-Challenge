@@ -1,43 +1,56 @@
-import { PokemonType } from '../types/types';
+import { PokemonType } from '../types/types.js';
+import { getPokePic } from '../getPokepic/getPokePic.js';
 
 export class Pokemon implements PokemonType {
-    id: number;
     name: string;
-    url: string;
+    id: number;
     height: number;
     weight: number;
-    pictures: string;
-    constructor(id: number) {
+    sprites: string;
+    constructor(
+        name: string,
+        id: number,
+        height: number,
+        weight: number,
+        sprites: string
+    ) {
+        this.name = name;
         this.id = id;
-        this.name = '';
-        this.url = '';
-        this.height = 0;
-        this.weight = 0;
-        this.pictures = '';
-        this.fill();
-    }
-    async fill() {
-        try {
-            const response = await fetch(
-                `https://pokeapi.co/api/v2/pokemon/${this.id}`
-            );
-            const pokemon = await response.json();
-            this.name = pokemon.name;
-            this.url = `https://pokeapi.co/api/v2/pokemon/${this.id}`;
-            this.height = pokemon.height;
-            this.weight = pokemon.weight;
-            this.pictures = pokemon.sprites.front_default;
-        } catch (err) {
-            console.log(err);
-        }
+        this.height = height;
+        this.weight = weight;
+        this.sprites = sprites;
     }
 }
-
-export const createPokemon = async (id: number) => {
+export const createPokemon = async (name) => {
     try {
-        const pokemon = new Pokemon(id);
-        await pokemon.fill();
-        return pokemon;
+        const response = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/${name}`
+        );
+
+        if (response.ok) {
+            const data = await response.json();
+
+            const pokemon = {
+                name: data.name,
+                id: data.id,
+                height: data.height,
+                weight: data.weight,
+                sprites: data.sprites.front_default,
+            };
+            const pokeInstance = new Pokemon(
+                pokemon.name,
+                pokemon.id,
+                pokemon.height,
+                pokemon.weight,
+                pokemon.sprites
+            );
+
+            return pokeInstance;
+        } else {
+            throw new Error(
+                `Error al obtener datos del Pokémon: ${response.status}`
+            );
+        }
     } catch (err) {
         console.log(err);
     }
