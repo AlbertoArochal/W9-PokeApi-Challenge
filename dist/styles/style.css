@@ -168,42 +168,74 @@ li {
     align-self: flex-start;
 }
 
-@media only screen and (max-width: 767px) {
-    .prev-button,
-    .next-button {
-        font-size: 16px;
-        padding: 8px 15px;
-        margin: 8px;
-        border-radius: 5%;
-    }
-    .favorite-button {
-        padding: 8px 15px;
-        margin: 8px;
-        border-radius: 3px;
+@media (max-width: 900px) {
+    .pokemini {
+        height: 30%;
+        margin-top: 30px;
     }
 
-    .semicircle {
-        height: 6vh;
-        border-bottom: 4px black solid;
-    }
-
-    .semicircle::before {
-        width: 70px;
-        height: 70px;
-        background-size: 70px;
-        transform: translateX(-50%) translateY(40%);
+    .pokedex {
+        border-radius: 5px;
     }
 
     li {
         width: 50%;
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .pokefile {
+        width: 80%;
+    }
+
+    .pokefile img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .favorite-button,
+    .prev-button,
+    .next-button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        top: calc(100% - 30px);
+    }
+
+    h1 {
+        font-size: 18px;
+        padding-left: 15px;
+    }
+
+    .semicircle {
+        height: 6vh;
+    }
+
+    li {
+        width: 50%;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .pokemini {
+        margin-right: 0;
+        height: 20%;
+        margin-top: 20px;
+    }
+
+    .counter {
+        font-size: smaller;
     }
 
     .pokedex {
-        margin-top: 75px;
-        border: 3px solid red;
-        border-radius: 8px;
+        width: 90%;
+        height: auto;
+        top: 40%;
+        border-radius: 5px;
     }
     .header {
         display: none;
