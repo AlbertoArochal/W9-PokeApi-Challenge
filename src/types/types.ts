@@ -6,9 +6,7 @@ export type pokemon = {
 export interface PokemonType {
     id: number;
     name: string;
-    url: string;
     height: number;
     weight: number;
-    pictures: string;
-    fill: () => Promise<void>;
+    sprites: string;
 }

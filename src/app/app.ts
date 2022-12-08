@@ -2,7 +2,6 @@ import { downloadPokemes } from '../downloadPokemes/downloadPokemes.js';
 import { getPokePic } from '../getPokepic/getPokePic.js';
 import { pokemon } from '../types/types.js';
 import { createPokemon } from '../Classes/Pokemon.js';
-import { pokeClick } from '../poke_profile/pokemonProfile.js';
 import { Pokemon } from '../Classes/Pokemon.js';
 export const app = async (start: number = 0, stop: number = 27) => {
     const prevButton = document.querySelector('.prev-button');

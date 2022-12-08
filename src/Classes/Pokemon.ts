@@ -21,7 +21,7 @@ export class Pokemon implements PokemonType {
         this.sprites = sprites;
     }
 }
-export const createPokemon = async (name) => {
+export const createPokemon = async (name: string) => {
     try {
         const response = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${name}`
