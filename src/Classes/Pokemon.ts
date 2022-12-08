@@ -1,5 +1,4 @@
 import { PokemonType } from '../types/types.js';
-import { getPokePic } from '../getPokepic/getPokePic.js';
 
 export class Pokemon implements PokemonType {
     name: string;
